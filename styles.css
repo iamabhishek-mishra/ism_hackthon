@@ -1,5 +1,11 @@
 /* ============================================================
    MININGTHON 2026 — ELITE STYLESHEET
+   File        : styles.css
+   Description : Global styles for all pages — variables, reset,
+                 navbar, hero, sections, cards, forms, footer,
+                 animations, and responsive breakpoints.
+   Author      : NODESIO CORP PRIVATE LIMITED
+   Last Updated: 2026
    ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
 
@@ -1881,11 +1887,6 @@ button { font-family: inherit; cursor: pointer; }
   background: var(--gray-light);
   border-radius: var(--radius-sm);
   border-left: 3px solid var(--yellow);
-}
-  border: 2px solid #86efac;
-  border-radius: var(--radius);
-  padding: 36px;
-  text-align: center;
 }
 
 .success-msg .icon { font-size: 3rem; margin-bottom: 12px; display: block; color: var(--green); }

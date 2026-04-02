@@ -1,5 +1,12 @@
 /* ============================================================
    MININGTHON 2026 — MAIN SCRIPT
+   File        : script.js
+   Description : Handles navbar scroll effect, mobile menu toggle,
+                 active nav link detection, countdown timers,
+                 animated counters, member tabs with duplicate
+                 validation, file upload widget, and form validation.
+   Author      : NODESIO CORP PRIVATE LIMITED
+   Last Updated: 2026
    ============================================================ */
 
 /* ── Navbar: scroll effect ──────────────────────────────────── */
