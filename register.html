@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register – Miningthon 2026</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-inner">
+    <span><i class="fa-solid fa-hammer"></i> MiningThon 2026 — Registrations Now Open</span>
+    <span><i class="fa-solid fa-trophy"></i> Total Prize Pool: ₹9,00,000</span>
+    <span><i class="fa-solid fa-calendar-days"></i> Registration Deadline: February 28, 2026</span>
+    <span><i class="fa-solid fa-location-dot"></i> Grand Finale: ISM Dhanbad, April 5–6, 2026</span>
+    <span><i class="fa-solid fa-users"></i> Teams of 2–5 Members | Free to Participate</span>
+    <span><i class="fa-solid fa-hammer"></i> MiningThon 2026 — Registrations Now Open</span>
+    <span><i class="fa-solid fa-trophy"></i> Total Prize Pool: ₹9,00,000</span>
+    <span><i class="fa-solid fa-calendar-days"></i> Registration Deadline: February 28, 2026</span>
+    <span><i class="fa-solid fa-location-dot"></i> Grand Finale: ISM Dhanbad, April 5–6, 2026</span>
+    <span><i class="fa-solid fa-users"></i> Teams of 2–5 Members | Free to Participate</span>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      Mining<span>Thon</span>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="overview.html">Overview</a></li>
+        <li><a href="themes.html">Themes</a></li>
+        <li><a href="prizes.html">Prizes</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="register.html" class="nav-cta">Register Now</a>
+        <div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1400&q=70');"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="section-tag">Free Registration</div>
+    <h1>Register Your Team</h1>
+    <p>Registrations close February 28, 2026. Secure your spot in India's premier mining hackathon — completely free.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="register-layout">
+      <div class="form-wrapper fade-in">
+        <div class="form-header">
+          <h2>Team Registration Form</h2>
+          <p>All fields marked with <span style="color:var(--red);">*</span> are required. You'll receive a confirmation email after submission.</p>
+        </div>
+        <form id="regForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="teamName">Team Name <span class="req">*</span></label>
+              <input type="text" id="teamName" placeholder="e.g. CoalBreakers" autocomplete="off" />
+              <div class="error-msg"><i class="fa-solid fa-triangle-exclamation"></i> Team name is required.</div>
+            </div>
+            <div class="form-group">
+              <label for="leaderName">Team Leader Name <span class="req">*</span></label>
+              <input type="text" id="leaderName" placeholder="Full name" autocomplete="name" />
+              <div class="error-msg"><i class="fa-solid fa-triangle-exclamation"></i> Leader name is required.</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="members">Number of Members <span class="req">*</span></label>
+              <select id="members">
+                <option value="default" disabled>Select team size</option>
+                <option value="1" selected>1 Member</option>
+                <option value="2">2 Members</option>
+                <option value="3">3 Members</option>
+                <option value="4">4 Members</option>
+                <option value="5">5 Members</option>
+              </select>
+              <div class="error-msg"><i class="fa-solid fa-triangle-exclamation"></i> Please select the number of members.</div>
+            </div>
+            <div class="form-group">
+              <label for="theme">Select Theme <span class="req">*</span></label>
+              <select id="theme">
+                <option value="default" disabled selected>Choose a theme</option>
+                <option value="safety">Mine Safety &amp; Monitoring</option>
+                <option value="automation">Automation in Mining</option>
+                <option value="sustainability">Environmental Sustainability</option>
+                <option value="ai">AI in Resource Optimization</option>
+              </select>
+              <div class="error-msg"><i class="fa-solid fa-triangle-exclamation"></i> Please select a theme.</div>
+            </div>
+          </div>
+
+          <!-- MEMBER TABS — shown after selecting team size -->
+          <div id="memberTabsSection" style="display:none;">
+            <div class="form-divider"></div>
+            <div class="member-tabs-label">
+              <i class="fa-solid fa-users"></i> Team Members Details
+            </div>
+            <div class="member-tabs" id="memberTabs"></div>
+            <div class="member-panels" id="memberPanels"></div>
+          </div>
+
+          <div class="form-divider"></div>
+          <div class="form-group">
+            <label for="ideaFile">Upload Idea Document <span class="req">*</span></label>
+            <div class="file-upload-wrap" id="fileUploadWrap">
+              <input type="file" id="ideaFile" accept=".pdf,.ppt,.pptx,.doc,.docx" />
+              <div class="file-upload-ui">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <div class="file-upload-text">
+                  <span class="file-upload-main">Click to upload or drag &amp; drop</span>
+                  <span class="file-upload-sub">PDF, PPT, PPTX, DOC, DOCX — max 10 MB</span>
+                </div>
+              </div>
+              <div class="file-chosen" id="fileChosen" style="display:none;">
+                <i class="fa-solid fa-file-circle-check"></i>
+                <span id="fileChosenName"></span>
+                <button type="button" class="file-remove" id="fileRemove" aria-label="Remove file"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            </div>
+            <div class="error-msg" id="fileError"><i class="fa-solid fa-triangle-exclamation"></i> Please upload a valid file (PDF, PPT, DOC — max 10 MB).</div>
+          </div>
+          <div class="form-group">
+            <label for="city">City / State</label>
+            <input type="text" id="city" placeholder="e.g. Dhanbad, Jharkhand" />
+          </div>
+          <div class="form-group">
+            <label for="idea">Brief Idea (optional)</label>
+            <textarea id="idea" rows="3" placeholder="Describe your solution idea in 2–3 sentences..."></textarea>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="agree" />
+            <label for="agree">I have read and agree to the <a href="rules.html">Rules &amp; Guidelines</a> of Miningthon 2026. I confirm all team members meet the eligibility criteria.</label>
+          </div>
+          <button type="submit" class="btn btn-dark" style="width:100%;padding:16px;font-size:1rem;">
+            <i class="fa-solid fa-rocket"></i> &nbsp; Submit Registration
+          </button>
+        </form>
+        <div id="successMsg" class="success-msg">
+          <span class="icon"><i class="fa-solid fa-circle-check"></i></span>
+          <h3>Registration Successful!</h3>
+          <p>Thank you for registering for Miningthon 2026. A confirmation email will be sent to your registered address. We'll be in touch with further details soon.</p>
+        </div>
+      </div>
+
+      <div class="register-sidebar fade-in delay-2">
+        <div class="sidebar-deadline">
+          <div class="dl-label">Registration Deadline</div>
+          <div class="dl-date">Feb 28, 2026</div>
+          <div class="dl-sub">Don't miss out — register today</div>
+        </div>
+        <div class="sidebar-card">
+          <h4><i class="fa-solid fa-clipboard-list"></i> Eligibility Checklist</h4>
+          <ul>
+            <li>UG / PG / PhD student or professional under 30</li>
+            <li>Team of 2–5 members</li>
+            <li>At least one Indian institution member</li>
+            <li>Cross-college teams allowed</li>
+            <li>No registration fee</li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h4><i class="fa-solid fa-trophy"></i> What You Can Win</h4>
+          <ul>
+            <li>1st Prize: ₹4,00,000</li>
+            <li>2nd Prize: ₹3,00,000</li>
+            <li>3rd Prize: ₹2,00,000</li>
+            <li>Best Theme Awards (×4)</li>
+            <li>Certificates for all finalists</li>
+            <li>Internship opportunities</li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h4><i class="fa-solid fa-calendar-days"></i> Key Dates</h4>
+          <ul>
+            <li>Jan 15 — Registrations Open</li>
+            <li>Feb 28 — Registration Deadline</li>
+            <li>Mar 10 — Idea Submission</li>
+            <li>Mar 20 — Shortlist Announced</li>
+            <li>Apr 5–6 — Grand Finale</li>
+          </ul>
+        </div>
+        <div class="sidebar-card" style="background:var(--gray-light);">
+          <h4><i class="fa-solid fa-circle-question"></i> Need Help?</h4>
+          <p style="font-size:0.85rem;color:var(--gray);margin-bottom:12px;">Have questions about registration or eligibility?</p>
+          <a href="support.html" class="btn btn-dark" style="width:100%;justify-content:center;padding:10px;">Visit Support →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">Mining<span>Thon</span> 2026</div>
+      <p>India's premier hackathon for coal mining innovation. Organized by ISM Dhanbad &amp; Coal India Private Limited. Empowering the next generation of mining technologists.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="overview.html"><i class="fa-solid fa-circle-info"></i> Overview</a></li>
+        <li><a href="themes.html"><i class="fa-solid fa-lightbulb"></i> Themes</a></li>
+        <li><a href="prizes.html"><i class="fa-solid fa-trophy"></i> Prizes</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Participate</h4>
+      <ul>
+        <li><a href="register.html"><i class="fa-solid fa-rocket"></i> Register Now</a></li>
+        <li><a href="rules.html"><i class="fa-solid fa-clipboard-list"></i> Rules &amp; Guidelines</a></li>
+        <li><a href="rules.html"><i class="fa-solid fa-file-pdf"></i> Download Rules PDF</a></li>
+        <li><a href="support.html"><i class="fa-solid fa-headset"></i> Support &amp; FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:miningthon@ism.ac.in"><i class="fa-solid fa-envelope"></i> miningthon@ism.ac.in</a></li>
+        <li><a href="tel:+916540123456"><i class="fa-solid fa-phone"></i> +91 65401 23456</a></li>
+        <li><a href="#"><i class="fa-solid fa-location-dot"></i> ISM Dhanbad, Jharkhand</a></li>
+        <li><a href="#"><i class="fa-solid fa-map-pin"></i> 826004, India</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 <span>MiningThon</span>. All rights reserved.</p>
+    <p>Built with <i class="fa-solid fa-heart" style="color:var(--yellow);"></i> by <strong>NODESIO CORP PRIVATE LIMITED</strong></p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
